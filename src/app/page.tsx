@@ -3,66 +3,48 @@
 import { BookOpenCheck, Squirrel, User } from "lucide-react"
 import Link from "next/link"
 import Navbar from "@/components/navbar"
+import CssGridBackground from "@/components/css-grid-background"
+import FloorPattern from '@/components/css-floor-pattern';
+import Unlock from "@/components/unlock"
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className="flex flex-col">
+
         <section
           id="hero"
-          className="relative flex items-center justify-center overflow-hidden text-black bg-[#FFF4DD]"
-          style={{ minHeight: "calc(100vh - 64px)" }}
+          className="
+              relative flex items-center justify-center 
+              overflow-hidden text-black bg-black
+              rounded-t-[2rem] z-10
+            "
+          style={{ minHeight: "calc(100vh)" }}
         >
+          <div className="absolute inset-x-0 top-0 z-30">
+            <Navbar />
+          </div>
+
+          <CssGridBackground />
 
           <div className="relative z-20 max-w-6xl mx-auto flex flex-col items-center justify-center w-full py-4 px-4">
             <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-serif">
                 Puzzled 2025
               </h1>
 
-              <div
-                className="
-    relative w-full max-w-md
-    rounded-md border-4 border-black
-    bg-[#FFF4DD]
-    shadow-[6px_6px_0_0_#000]
-    text-left
-  "
-              >
-                {/* Top bar with circles */}
-                <div className="flex items-center gap-2 border-b-4 border-black px-3 py-2 bg-[#f0e9da]">
-                  <span className="h-3 w-3 rounded-full bg-red-500 border-2 border-black"></span>
-                  <span className="h-3 w-3 rounded-full bg-yellow-400 border-2 border-black"></span>
-                  <span className="h-3 w-3 rounded-full bg-green-500 border-2 border-black"></span>
-                </div>
-
-                {/* Body */}
-                <div className="px-6 py-6">
-                  <p className="mb-6 text-base md:text-lg">
-                    Lorem ipsum dolor sit amet, consectetuer.
-                  </p>
-
-                  {/* Button */}
-                  <button
-                    className="
-        px-6 py-2 rounded-full
-        bg-pink-400
-        border-2 border-black
-        font-bold text-lg
-        shadow-[3px_3px_0_0_#000]
-        active:translate-y-[2px] active:shadow-none
-        transition-all
-      "
-                  >
-                    Buy tickets
-                  </button>
-                </div>
+              {/* Pop-up text with stacked background */}
+              <div className="relative w-full max-w-md">
+                {/* farthest/back */}
+                <Unlock />
               </div>
+
 
             </div>
           </div>
         </section>
+
 
         <section
           id="about"

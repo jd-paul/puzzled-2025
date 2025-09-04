@@ -1,52 +1,71 @@
-import React, { useState } from 'react';
+import Image from "next/image";
+import React, { useState } from "react";
+
+type DotProps = {
+    className?: string;
+    withLogo?: boolean;
+};
+
+const Dot: React.FC<DotProps> = ({ className = "", withLogo = false }) => (
+    <span
+        className={`relative flex items-center justify-center
+                h-10 w-10 rounded-full border-2 border-black overflow-hidden ${className}`}
+    >
+        {withLogo && (
+            <Image
+                src="/logo.png"
+                alt="Puzzled 2025"
+                fill
+                className="object-contain p-[4px]"
+                priority
+            />
+        )}
+    </span>
+);
+
 
 const Navbar: React.FC = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="w-full bg-[#FFF4DD]/10">
+        <header className="w-full">
             <nav
                 className="
-                    mx-auto max-w
+                    sticky top-0 z-50
+                    mx-3 mt-3
                     flex items-center justify-between
-                    h-16
-                    border-b-3 border-black bg-[#FFF4DD]
-                    pl-4
+                    h-16 rounded-[2rem]
+                    px-4
                 "
             >
-                {/* Brand */}
-                <div className="flex items-center gap-3">
-                    <span className="grid h-7 w-7 place-items-center rounded-sm border-2 border-black">
-                        <svg viewBox="0 0 24 24" className="h-4 w-4 stroke-black" fill="none" strokeWidth="2">
-                            <path d="M12 3 21 12 12 21 3 12Z" />
-                        </svg>
-                    </span>
-                    <span className="font-black text-black text-lg">Sunrise Fest</span>
+                {/* Left: overlapping dots */}
+                <div className="relative h-10">
+                    <div className="flex">
+                        <Dot className="bg-white" />
+                        <Dot className="-ml-3 bg-[#E6EBCF]" />
+                        <Dot className="-ml-3 bg-[#F4DDED]" />
+                        <Dot className="-ml-3 bg-[#e90105]" withLogo />
+                    </div>
                 </div>
 
-                {/* ONLY burger (desktop + mobile) */}
+                {/* Right: pill button */}
                 <button
-                    aria-label="Menu"
-                    onClick={() => setOpen(v => !v)}
+                    onClick={() => setOpen((v) => !v)}
                     className="
-                        h-full w-16
-                        grid place-items-center
-                        border-l-3 border-black
-                        bg-[#F5B443]
+                        h-10 px-5 rounded-full
+                        border-2 border-black bg-transparent
+                        text-lg font-medium
+                        transition-transform
                     "
+                    aria-label="Menu"
                 >
-                    <div className="space-y-2">
-                        <span className="block h-[3px] w-8 bg-black" />
-                        <span className="block h-[3px] w-8 bg-black" />
-                        <span className="block h-[3px] w-8 bg-black" />
-                    </div>
+                    Menu
                 </button>
             </nav>
 
-            {/* Optional: your menu panel when `open` is true */}
             {open && (
-                <div className="mx-auto max-w-6xl border-x-2 border-b-2 border-black bg-[#FFF4DD] p-4">
-                    {/* put menu content here if needed */}
+                <div className="mx-3 border-x-2 border-b-2 border-black bg-white/70 p-4 rounded-b-2xl">
+                    {/* menu content */}
                 </div>
             )}
         </header>
