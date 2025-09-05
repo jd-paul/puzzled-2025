@@ -1,29 +1,18 @@
-import type { Metadata } from "next";
-import { Young_Serif, Caprasimo, Work_Sans } from "next/font/google";
-import "./globals.css";
+// app/layout.tsx
+import type { Metadata } from 'next';
+import { Rubik } from 'next/font/google';
+import './globals.css';
 
-// Serif / vintage headers
-const youngSerif = Young_Serif({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const caprasimo = Caprasimo({
-  variable: "--font-caprasimo",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-// Body sans
-const workSans = Work_Sans({
-  variable: "--font-sans",
-  subsets: ["latin"],
+const rubik = Rubik({
+  variable: '--font-ui',
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Puzzled 2025",
-  description: "Vintage puzzle fest website",
+  title: 'Puzzled 2025',
+  description: 'Vintage puzzle fest website',
 };
 
 export default function RootLayout({
@@ -33,11 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${youngSerif.variable} ${caprasimo.variable} ${workSans.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${rubik.variable} antialiased`}>{children}</body>
     </html>
   );
 }

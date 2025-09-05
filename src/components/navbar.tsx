@@ -9,7 +9,7 @@ type DotProps = {
 const Dot: React.FC<DotProps> = ({ className = "", withLogo = false }) => (
     <span
         className={`relative flex items-center justify-center
-                h-10 w-10 rounded-full border-2 border-black overflow-hidden ${className}`}
+                h-10 w-10 rounded-full border-3 border-black overflow-hidden ${className}`}
     >
         {withLogo && (
             <Image
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             <nav
                 className="
                     sticky top-0 z-50
-                    mx-3 mt-3
+                    mx-3
                     flex items-center justify-between
                     h-16 rounded-[2rem]
                     px-4
@@ -42,8 +42,7 @@ const Navbar: React.FC = () => {
                 <div className="relative h-10">
                     <div className="flex">
                         <Dot className="bg-white" />
-                        <Dot className="-ml-3 bg-[#E6EBCF]" />
-                        <Dot className="-ml-3 bg-[#F4DDED]" />
+                        <Dot className="-ml-3 bg-amber-300" />
                         <Dot className="-ml-3 bg-[#e90105]" withLogo />
                     </div>
                 </div>
@@ -53,9 +52,9 @@ const Navbar: React.FC = () => {
                     onClick={() => setOpen((v) => !v)}
                     className="
                         h-10 px-5 rounded-full
-                        border-2 border-black bg-transparent
-                        text-lg font-medium
-                        transition-transform
+                        border-3 border-black
+                        text-lg font-bold
+                        transition-transform bg-white
                     "
                     aria-label="Menu"
                 >
