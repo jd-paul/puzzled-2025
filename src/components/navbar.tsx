@@ -9,7 +9,7 @@ type DotProps = {
 const Dot: React.FC<DotProps> = ({ className = "", withLogo = false }) => (
     <span
         className={`relative flex items-center justify-center
-                h-10 w-10 rounded-full border-3 border-black overflow-hidden ${className}`}
+                h-12 w-12 rounded-full border-3 border-black overflow-hidden ${className}`}
     >
         {withLogo && (
             <Image
@@ -39,11 +39,12 @@ const Navbar: React.FC = () => {
                 "
             >
                 {/* Left: overlapping dots */}
-                <div className="relative h-10">
+                <div className="relative h-12">
                     <div className="flex">
-                        <Dot className="bg-white" />
-                        <Dot className="-ml-3 bg-amber-300" />
-                        <Dot className="-ml-3 bg-[#e90105]" withLogo />
+                        <div className="text-black font-black bg-amber-600 flex items-center px-2 rounded-full border-3 border-black text-lg">
+                            Puzzled 2025
+                        </div>
+                        <Dot className="ml-3 bg-[#e90105]" withLogo />
                     </div>
                 </div>
 
@@ -51,7 +52,7 @@ const Navbar: React.FC = () => {
                 <button
                     onClick={() => setOpen((v) => !v)}
                     className="
-                        h-10 px-5 rounded-full
+                        h-12 px-5 rounded-full
                         border-3 border-black
                         text-lg font-bold
                         transition-transform bg-white

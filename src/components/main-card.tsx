@@ -25,10 +25,15 @@ export const MainCard: React.FC = () => {
             </div>
 
             {/* body */}
+
             <div className="p-6 sm:p-8 md:p-10">
-                <h1 className="text-[clamp(2rem,6vw,3rem)] font-extrabold leading-[0.95] mb-6">
-                    KCL Informatics&apos; Puzzled 2025
+                <h1 className="text-[clamp(2rem,6vw,3rem)] font-extrabold leading-[0.95] mb-2">
+                    Puzzled 25
                 </h1>
+                <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950 italic mb-4">
+                    King's Informatics presents your annual puzzle hunt
+                </p>
+
 
                 <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950">
                     Join us for a day of challenges and fun at the heart of Strand!
