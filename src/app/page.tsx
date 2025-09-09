@@ -36,7 +36,7 @@ export default function Home() {
           {/* Container */}
           <div className="px-5 flex flex-col md:flex-row items-start gap-6">
             <PolaroidCard
-              imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-4EvCwL7oWO7glfCMAwaERcTxWaB8oo.png"
+              imageUrl="/people/winners.jpg"
               logoText="Puzzled"
               subtitle="Autumn '24"
               date="09/24"
@@ -56,7 +56,7 @@ export default function Home() {
           className="relative overflow-hidden bg-amber-100 rounded-[2rem] z-10 border-3 border-black min-h-screen"
         >
           {/* Top wave (overlay, not a flex column) */}
-          <div className="pointer-events-none absolute inset-x-0 top-[-2.5] h-24 z-20">
+          {/* <div className="pointer-events-none absolute inset-x-0 top-[-2.5] h-24 z-20">
             <div
               className="h-full w-full"
               style={{
@@ -69,15 +69,14 @@ export default function Home() {
                 backgroundColor: '#000', // the visible wave color
               }}
             />
-          </div>
+          </div> */}
 
           {/* Container */}
           <div className="relative w-full max-w-6xl px-5 py-32 text-black">
-            hey
           </div>
 
           {/* Bottom wave (overlay, not a flex column) */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-[-2.5] h-24 z-20">
+          {/* <div className="pointer-events-none absolute inset-x-0 bottom-[-2.5] h-24 z-20">
             <div
               className="h-full w-full -scale-y-100 -scale-x-100"   // ⬅️ flips vertically
               style={{
@@ -92,7 +91,7 @@ export default function Home() {
                 backgroundColor: '#000',
               }}
             />
-          </div>
+          </div> */}
         </section>
 
 

@@ -9,7 +9,7 @@
     "export": "next export",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out -b gh-pages --dotfiles -m \"Deploy $(date '+%Y-%m-%d %H:%M %Z')\""
-},
+  },
   "dependencies": {
     "framer-motion": "^12.23.12",
     "next": "15.5.2",
