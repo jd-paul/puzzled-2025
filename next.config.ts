@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",          // produce static files in /out
+  images: { unoptimized: true },
+  // No basePath/assetPrefix because you use a custom domain
 };
 
 export default nextConfig;
