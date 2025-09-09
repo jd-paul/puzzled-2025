@@ -3,116 +3,100 @@
 import type React from "react"
 
 interface PolaroidCardProps {
-    imageUrl: string
-    logoText: string
-    subtitle: string
-    date: string
-    className?: string
+  imageUrl: string
+  logoText: string
+  subtitle: string
+  date: string
+  className?: string
 }
 
 export function PolaroidCard({ imageUrl, logoText, subtitle, date, className = "" }: PolaroidCardProps) {
-    return (
-        <div className={`relative ${className}`} style={{ "--polaroid-size": "320px" } as React.CSSProperties}>
-            <div className="absolute top-3 left-3 w-80 h-96 transform rotate-[-12deg] z-0">
-                <div className="polaroid-shadow-back">
-                    <div className="polaroid-back">
-                        <div className="paper-texture-back" />
-                        <div className="polaroid-edges-back" />
-                    </div>
+  return (
+    <div className={`relative ${className}`} style={{ "--polaroid-size": "320px" } as React.CSSProperties}>
+      {/* <div className="absolute top-3 left-3 w-80 h-96 transform rotate-[-12deg] z-0">
+        <div className="polaroid-shadow-back">
+          <div className="polaroid-back">
+
+          </div>
+        </div>
+      </div> */}
+
+      {/* Main polaroid with enhanced realism */}
+      <div className="relative w-80 h-96 transform transition-all duration-300 z-20">
+        {/* <div className="absolute -top-8 left-6 z-30 transform scale-75">
+          <svg width="99" height="154" viewBox="0 0 99 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="paperclip-shadow" x="0%" y="0%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="2" stdDeviation="1" floodOpacity="0.5" />
+                <feDropShadow dx="-2" dy="0" stdDeviation="0.5" floodOpacity="0.25" />
+                <feDropShadow dx="1" dy="0" stdDeviation="0.25" floodColor="white" floodOpacity="1" />
+              </filter>
+            </defs>
+            <path
+              d="M21.56 39.85a15.02 15.02 0 0 1 11.03-2.95h.06a14.3 14.3 0 0 1 10.44 6.01c2.12 3.34 3.05 6.73 5.06 14.23L56 86.38l3.88-.97-7.85-29.3-.09-.29c-1.92-7.17-2.99-11.17-5.5-15.1l-.02-.03-.02-.04a18.3 18.3 0 0 0-13.37-7.73c-5.03-.58-9.76.69-13.83 3.7a18.3 18.3 0 0 0-7.7 13.39l-.01.04v.04c-.21 4.65.86 8.65 2.78 15.82l.6 2.23 4.01-.47-.67-2.5c-2-7.5-2.9-10.9-2.73-14.86.38-4.2 2.59-8 6.04-10.42l.02-.02.03-.02Zm-5.98 50.27L11.4 74.5l-3.86 1.03 4.1 15.33 3.95-.74Z"
+              fill="#E4E4E4"
+              fillOpacity="0.9"
+              filter="url(#paperclip-shadow)"
+            />
+          </svg>
+        </div> */}
+
+        <div className="polaroid-shadow-front">
+          <div className="polaroid-front z-10 rounded-xl border-[6px] border-black bg-white">
+            {/* Realistic polaroid edges */}
+            <div className="polaroid-top-edge" />
+            <div className="polaroid-bottom-edge" />
+
+            {/* Paper texture overlay */}
+            <div className="paper-texture" />
+
+            {/* Photo well with realistic inset shadow */}
+            <div className="photo-well">
+              <div className="photo-shadow-overlay" />
+              <img src={imageUrl || "/placeholder.svg"} alt="Polaroid photo" className="w-full h-full object-cover" />
+
+              {/* Overlay content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="absolute inset-0 bg-black/20 rounded" />
+
+                {/* Logo with enhanced styling */}
+                <div className="relative flex items-center gap-2 mb-2 z-10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-300 via-green-300 to-blue-400 rounded-lg blur-sm opacity-90" />
+                    <div className="absolute inset-0 rounded-lg" />
+                    <h1 className="relative text-4xl font-bold text-white px-3 py-1 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">
+                      {logoText}
+                    </h1>
+                  </div>
                 </div>
+
+                <div className="relative z-10 px-3 py-1 rounded">
+                  <p className="text-white text-lg font-medium drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">
+                    {subtitle}
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Main polaroid with enhanced realism */}
-            <div className="relative w-80 h-96 transform hover:rotate-1 transition-all duration-300 z-20">
-                <div className="absolute -top-8 left-6 z-30 transform scale-75">
-                    <svg width="99" height="154" viewBox="0 0 99 154" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="paperclip-shadow" x="0%" y="0%" width="120%" height="120%">
-                                <feDropShadow dx="0" dy="2" stdDeviation="1" floodOpacity="0.5" />
-                                <feDropShadow dx="-2" dy="0" stdDeviation="0.5" floodOpacity="0.25" />
-                                <feDropShadow dx="1" dy="0" stdDeviation="0.25" floodColor="white" floodOpacity="1" />
-                            </filter>
-                        </defs>
-                        <path
-                            d="M21.56 39.85a15.02 15.02 0 0 1 11.03-2.95h.06a14.3 14.3 0 0 1 10.44 6.01c2.12 3.34 3.05 6.73 5.06 14.23L56 86.38l3.88-.97-7.85-29.3-.09-.29c-1.92-7.17-2.99-11.17-5.5-15.1l-.02-.03-.02-.04a18.3 18.3 0 0 0-13.37-7.73c-5.03-.58-9.76.69-13.83 3.7a18.3 18.3 0 0 0-7.7 13.39l-.01.04v.04c-.21 4.65.86 8.65 2.78 15.82l.6 2.23 4.01-.47-.67-2.5c-2-7.5-2.9-10.9-2.73-14.86.38-4.2 2.59-8 6.04-10.42l.02-.02.03-.02Zm-5.98 50.27L11.4 74.5l-3.86 1.03 4.1 15.33 3.95-.74Z"
-                            fill="#E4E4E4"
-                            fillOpacity="0.9"
-                            filter="url(#paperclip-shadow)"
-                        />
-                    </svg>
-                </div>
-
-                <div className="polaroid-shadow-front">
-                    <div className="polaroid-front">
-                        {/* Realistic polaroid edges */}
-                        <div className="polaroid-top-edge" />
-                        <div className="polaroid-bottom-edge" />
-
-                        {/* Paper texture overlay */}
-                        <div className="paper-texture" />
-
-                        {/* Photo well with realistic inset shadow */}
-                        <div className="photo-well">
-                            <div className="photo-shadow-overlay" />
-                            <img src={imageUrl || "/placeholder.svg"} alt="Polaroid photo" className="w-full h-full object-cover" />
-
-                            {/* Overlay content */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                <div className="absolute inset-0 bg-black/20 rounded" />
-
-                                {/* Logo with enhanced styling */}
-                                <div className="relative flex items-center gap-2 mb-2 z-10">
-                                    {/* Musical figure icon */}
-                                    <div className="relative">
-                                        <svg width="40" height="40" viewBox="0 0 40 40" className="text-white drop-shadow-lg">
-                                            <circle cx="20" cy="12" r="4" fill="currentColor" />
-                                            <path d="M20 18c-3 0-6 2-6 4v8c0 2 1 3 3 3h6c2 0 3-1 3-3v-8c0-2-3-4-6-4z" fill="currentColor" />
-                                            <path d="M16 20l8 4M24 20l-8 4" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                                            <g className="text-cyan-400">
-                                                <circle cx="28" cy="8" r="1.5" fill="currentColor" />
-                                                <path d="M28 8v8" stroke="currentColor" strokeWidth="1" />
-                                                <path d="M28 8c2-1 4-1 4 0v6" stroke="currentColor" strokeWidth="1" fill="none" />
-                                                <circle cx="32" cy="14" r="1" fill="currentColor" />
-                                            </g>
-                                        </svg>
-                                    </div>
-
-                                    <div className="relative">
-                                        <div className="absolute inset-0 bg-gradient-to-r from-orange-300 via-green-300 to-blue-400 rounded-lg blur-sm opacity-90" />
-                                        <div className="absolute inset-0 rounded-lg" />
-                                        <h1 className="relative text-4xl font-bold text-white px-3 py-1 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">
-                                            {logoText}
-                                        </h1>
-                                    </div>
-                                </div>
-
-                                <div className="relative z-10 px-3 py-1 rounded">
-                                    <p className="text-white text-lg font-medium drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)]">
-                                        {subtitle}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="absolute bottom-6 right-8  px-2 py-1 rounded">
-                            <p className="text-white text-2xl font-light tracking-wide drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] transform -rotate-1">
-                                {date}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div className="absolute bottom-6 right-8  px-2 py-1 rounded">
+              <p className="text-white text-2xl font-light tracking-wide drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_4px_rgb(0_0_0_/_90%)] transform -rotate-1">
+                {date}
+              </p>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <style jsx>{`
+      <style jsx>{`
         .polaroid-shadow-back {
           width: 100%;
           height: 100%;
           border-radius: 8px;
-          box-shadow: 
-            0px 28px 11px 0px rgba(0,0,0,0.02),
-            0px 16px 9px 0px rgba(0,0,0,0.06),
-            0px 7px 7px 0px rgba(0,0,0,0.10),
-            0px 2px 4px 0px rgba(0,0,0,0.11);
+          box-shadow:
+            0px 28px 11px 0px rgba(0,0,0,0),
+            0px 16px 9px 0px rgba(0,0,0,0),
+            0px 7px 7px 0px rgba(0,0,0,0),
+            0px 2px 4px 0px rgba(0,0,0,0),
           transition: box-shadow 0.3s ease;
         }
 
@@ -153,23 +137,9 @@ export function PolaroidCard({ imageUrl, logoText, subtitle, date, className = "
           transition: box-shadow 0.3s ease;
         }
 
-        .polaroid-shadow-front:hover {
-          box-shadow: 
-            0px 44px 20px 0px rgba(0,0,0,0.02),
-            0px 28px 18px 0px rgba(0,0,0,0.06),
-            0px 16px 15px 0px rgba(0,0,0,0.10),
-            0px 6px 10px 0px rgba(0,0,0,0.11);
-        }
-
         .polaroid-front {
           width: 100%;
           height: 100%;
-          background: linear-gradient(180deg, 
-            oklch(97.66% 0.002 216) 0%, 
-            oklch(96% 0.002 216) 80%, 
-            oklch(98% 0.002 216) 82%, 
-            oklch(99.9% 0.002 216) 100%);
-          border-radius: 8px;
           position: relative;
           overflow: hidden;
         }
@@ -237,6 +207,6 @@ export function PolaroidCard({ imageUrl, logoText, subtitle, date, className = "
           z-index: 10;
         }
       `}</style>
-        </div>
-    )
+    </div>
+  )
 }

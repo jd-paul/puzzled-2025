@@ -7,7 +7,7 @@ export const MainCard: React.FC = () => {
     return (
         <div
             className="
-                relative mx-auto w-auto min-w-[30vw] max-w-[42rem]
+                relative mx-auto my-8 w-auto min-w-[30vw] max-w-[42rem]
                 rounded-xl border-[6px] border-black bg-white
                 shadow-[12px_12px_0_0_#000] overflow-hidden
             "
@@ -28,10 +28,10 @@ export const MainCard: React.FC = () => {
 
             <div className="p-6 sm:p-8 md:p-10">
                 <h1 className="text-[clamp(2rem,6vw,3rem)] font-extrabold leading-[0.95] mb-2">
-                    Welcome to Puzzled 25
+                    Puzzled 25
                 </h1>
                 <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950 italic mb-4">
-                    King's Informatics presents the annual puzzle hunt!
+                    King's Informatics presents your annual puzzle hunt
                 </p>
 
 
@@ -73,7 +73,7 @@ export const MainCard: React.FC = () => {
                         return isTickets ? (
                             <a
                                 key={label}
-                                href="https://www.eventbrite.com/e/puzzled-2025-tickets-1652374810539"
+                                href="https://www.eventbrite.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

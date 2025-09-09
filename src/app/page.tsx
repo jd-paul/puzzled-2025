@@ -35,13 +35,20 @@ export default function Home() {
 
           {/* Container */}
           <div className="px-5 flex flex-col md:flex-row items-start gap-6">
-            <PolaroidCard
-              imageUrl="/people/winners.jpg"
-              logoText="Puzzled"
-              subtitle="Autumn '24"
-              date="09/24"
-            />
-            <MainCard />
+            <div className="">
+              <PolaroidCard
+                imageUrl="/people/winners.jpg"
+                logoText="Puzzled"
+                subtitle="Autumn '25"
+                date="09/25"
+              />
+            </div>
+
+            <div className="">
+              <MainCard />
+            </div>
+
+
           </div>
 
 
