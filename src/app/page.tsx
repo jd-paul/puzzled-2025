@@ -3,10 +3,11 @@
 import Navbar from "@/components/navbar"
 import CssPuzzleBackground from "@/components/css-puzzle-background"
 import CssHatchBackground from "@/components/css-hatch-background"
+import HelloComponent from "@/components/hello-component"
+
 import MainCard from "@/components/main-card"
 import QuickLinks from "@/components/quick-links"
-import { PolaroidCard } from "@/components/polaroid-card"
-
+import PicturesCard from "@/components/pictures-card"
 
 export default function Home() {
   const waveSvg = encodeURIComponent(
@@ -16,63 +17,54 @@ export default function Home() {
   );
 
   return (
-    <div className="bg-black">
-      <div className="flex flex-col">
-        <section
-          id="hero"
-          className="
+
+    <div className="flex flex-col">
+      <section
+        id="hero"
+        className="
             relative flex items-center justify-center
             overflow-hidden text-black
             z-20 border-b-[6px] border-black
             h-[clamp(720px,100svh,1100px)] bg-[#FFF4DD]
           "
-        >
-          <div className="absolute inset-x-0 top-0 z-30 pt-3">
-            <Navbar />
+      >
+        <div className="absolute inset-x-0 top-0 z-30 pt-3">
+          <Navbar />
+        </div>
+
+        <CssPuzzleBackground />
+
+        {/* Container */}
+        <div className="px-5 flex flex-col md:flex-row items-start gap-6">
+          <div className="">
+            <MainCard />
           </div>
-
-          <CssPuzzleBackground />
-
-          {/* Container */}
-          <div className="px-5 flex flex-col md:flex-row items-start gap-6">
-            {/* <div className="">
-              <h1 className="text-[clamp(2rem,6vw,3rem)] font-extrabold leading-[0.95] mb-2">
-                Welcome to Puzzled 25
-              </h1>
-              <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950 italic mb-4">
-                King's Informatics presents the annual puzzle hunt!
-              </p>
-              <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950">
-                Join us for a day of challenges and fun at the heart of Strand!
-              </p>
-            </div> */}
-
-            <div className="">
-              <MainCard />
-            </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
 
-        <section
-          id="about"
-          className="relative flex items-center justify-center
+      <section
+        id="about"
+        className="relative flex items-center justify-center
             overflow-visible text-black bg-[#FEF5D0]
-            z-50
-            h-[clamp(720px,100svh,1100px)]"
-        >
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl px-5">
-            <QuickLinks />
-          </div>
-          <CssHatchBackground />
+            z-50"
+      >
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl px-5">
+          <QuickLinks />
+        </div>
+        <CssHatchBackground />
 
-          {/* Container */}
-          <div className="relative w-full max-w-6xl px-5 py-32 text-black">
-          </div>
-        </section>
+        {/* Container */}
+        <div className="relative w-full max-w-6xl px-5 py-24 text-black">
 
+          <HelloComponent />
 
-      </div>
+          <h1 className="text-[clamp(1.8rem,6vw,2.75rem)] font-extrabold leading-[0.95] mb-4 mt-12">
+            Previous Pictures
+          </h1>
+          <PicturesCard />
+        </div>
+      </section>
     </div>
   )
 }

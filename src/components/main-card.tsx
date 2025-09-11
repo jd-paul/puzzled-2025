@@ -1,6 +1,4 @@
 import React from "react";
-import CountdownTimer from "@/components/countdown-timer";
-
 import { LinkIcon, Ellipsis, Minus, Album, SquareX } from "lucide-react"
 
 export const MainCard: React.FC = () => {
@@ -30,13 +28,9 @@ export const MainCard: React.FC = () => {
                 <h1 className="text-[clamp(2rem,6vw,3rem)] font-extrabold leading-[0.95] mb-2">
                     Welcome to Puzzled 25
                 </h1>
-                <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950 italic mb-6">
+                <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-stone-800 italic mb-6">
                     King's Informatics presents the annual puzzle hunt!
                 </p>
-
-
-                {/* Need an event countdown timer here */}
-                {/* <CountdownTimer target="2025-09-24T00:00:00Z" /> */}
 
                 {/* chips */}
                 <div className="mt-6 flex flex-wrap gap-3.5">
@@ -50,8 +44,8 @@ export const MainCard: React.FC = () => {
                         const baseClasses = `
                             inline-flex items-center gap-2 rounded-xl border-[4px] border-black
                             px-3.5 py-1 text-lg font-extrabold
-                            shadow-[6px_6px_0_0_#000]
-                            hover:translate-y-[1px] hover:shadow-[4px_4px_0_0_#000]
+                            shadow-[4px_4px_0_0_#000]
+                            hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_#000]
                             transition
                         `;
                         const bgClass = isTickets ? "bg-amber-300 text-black" : "bg-[#FF2E63]";
