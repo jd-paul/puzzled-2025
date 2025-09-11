@@ -2,36 +2,36 @@
 import React from "react";
 
 export default function About() {
-    return (
-        <section className="mask-container">
-            <div className="above-mask-box">
-                <div className="box-wrap">
-                    {/* ↑ Put content that sits ABOVE the torn/curved mask */}
-                    <p>Above container</p>
-                </div>
-            </div>
+  return (
+    <section className="mask-container">
+      <div className="above-mask-box">
+        <div className="box-wrap">
+          {/* ↑ Put content that sits ABOVE the torn/curved mask */}
+          <p>Above container</p>
+        </div>
+      </div>
 
-            <div className="mask-box">
-                <div className="box-wrap">
-                    {/* Main masked area */}
-                    <p>Main container</p>
-                </div>
-            </div>
+      <div className="mask-box">
+        <div className="box-wrap">
+          {/* Main masked area */}
+          <p>Main container</p>
+        </div>
+      </div>
 
-            <div className="below-mask-box">
-                <div className="box-wrap">
-                    {/* Content that continues BELOW the mask */}
-                    <p>Below container</p>
-                </div>
-            </div>
+      <div className="below-mask-box">
+        <div className="box-wrap">
+          {/* Content that continues BELOW the mask */}
+          <p>Below container</p>
+        </div>
+      </div>
 
-            <style jsx global>{`
+      <style jsx global>{`
         *, *::before, *::after {
           box-sizing: border-box;
         }
       `}</style>
 
-            <style jsx>{`
+      <style jsx>{`
         .mask-container {
           container-type: inline-size;
           --mask-head-size: calc(0.1 * 100cqw);
@@ -75,6 +75,6 @@ export default function About() {
           color: #fff;
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 }

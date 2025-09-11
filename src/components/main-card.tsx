@@ -30,16 +30,9 @@ export const MainCard: React.FC = () => {
                 <h1 className="text-[clamp(2rem,6vw,3rem)] font-extrabold leading-[0.95] mb-2">
                     Welcome to Puzzled 25
                 </h1>
-                <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950 italic mb-4">
+                <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950 italic mb-6">
                     King's Informatics presents the annual puzzle hunt!
                 </p>
-
-
-                <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-shadow-stone-950">
-                    Join us for a day of challenges and fun at the heart of Strand!
-                </p>
-
-                {/* <div className="my-25" /> */}
 
 
                 {/* Need an event countdown timer here */}
