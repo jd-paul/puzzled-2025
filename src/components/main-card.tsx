@@ -25,7 +25,7 @@ export const MainCard: React.FC = () => {
             {/* body */}
 
             <div className="p-6 sm:p-8 md:p-10">
-                <h1 className="text-[clamp(2rem,6vw,3rem)] font-extrabold leading-[0.95] mb-2">
+                <h1 className="text-[clamp(2rem,6vw,3rem)] font-extrabold leading-[1.2] mb-2">
                     Welcome to Puzzled 25
                 </h1>
                 <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-stone-800 italic mb-6">

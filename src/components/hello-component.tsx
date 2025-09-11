@@ -23,66 +23,79 @@ const faqs = [
 export default function HelloComponent() {
     return (
         <>
-            <div
-                className="
+
+
+
+            {/* body */}
+
+            <section className="relative grid gap-6 md:grid-cols-[60%_40%] items-start">
+                {/* LEFT */}
+                <div
+                    className="
                         relative mx-auto w-auto max-w-full
                         rounded-xl border-[6px] border-black bg-white
                         shadow-[12px_12px_0_0_#000] overflow-hidden
                     "
-            >
-                {/* title bar */}
-                <div className="flex items-center justify-between border-b-[6px] border-black bg-amber-600 px-3 py-1">
-                    {/* 3x3 dots */}
-                    <Ellipsis className="h-7 w-7 text-black" aria-hidden />
+                >
+                    {/* title bar */}
+                    <div className="flex items-center justify-between border-b-[6px] border-black bg-[#e90105] px-3 py-1">
+                        {/* 3x3 dots */}
+                        <Ellipsis className="h-7 w-7 text-black" aria-hidden />
 
-                    <div className="flex items-center gap-1">
-                        <Minus className="h-6 w-6 text-black stroke-3" aria-label="Minimize" />
-                        <Album className="h-6 w-6 text-black stroke-3" aria-label="Maximize" />
-                        <SquareX className="h-6 w-6 text-black stroke-3" aria-label="Close" />
+                        <div className="flex items-center gap-1">
+                            <Minus className="h-6 w-6 text-black stroke-3" aria-label="Minimize" />
+                            <Album className="h-6 w-6 text-black stroke-3" aria-label="Maximize" />
+                            <SquareX className="h-6 w-6 text-black stroke-3" aria-label="Close" />
+                        </div>
                     </div>
-                </div>
+                    <div className="px-6 py-8">
+                        <div className="flex flex-col justify-center">
+                            <h1 className="text-[clamp(1.8rem,6vw,2.75rem)] font-extrabold leading-[1.2] mb-4">
+                                Welcome to King's Informatics!
+                            </h1>
 
-                {/* body */}
+                            <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-stone-800 mb-8">
+                                Join us on <span className="font-bold">Wed 24 Sept, 1-6pm</span> at <span className="font-bold">Strand</span> for King's Informatics' annual puzzle hunt!
+                            </p>
 
-                <section className="relative grid gap-6 md:grid-cols-[60%_40%] items-start px-6 py-8">
-                    {/* LEFT */}
-                    <div className="flex flex-col justify-center">
-                        <h1 className="text-[clamp(1.8rem,6vw,2.75rem)] font-extrabold leading-[0.95] mb-4">
-                            Hello!
-                        </h1>
+                            <h1 className="text-[clamp(1.4rem,6vw,1.6rem)] font-extrabold leading-[1.2] mb-4">
+                                Frequently Asked Questions
+                            </h1>
 
-                        <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-stone-800 mb-8">
-                            Join us on <span className="font-bold">Wed 24 Sept, 1-6pm</span> at <span className="font-bold">Strand</span> for King's Informatics' annual puzzle hunt!
-                        </p>
-
-                        {/* FAQs */}
-                        <div className="w-full">
-                            <div className="rounded-xl border-4 border-black bg-white shadow-[4px_4px_0_0_#000] divide-y-4 divide-black overflow-hidden">
-                                {faqs.map((item, i) => (
-                                    <AccordionItem key={i} q={item.q} a={item.a} defaultOpen={i === 0} />
-                                ))}
+                            {/* FAQs */}
+                            <div className="w-full">
+                                <div className="rounded-md border-4 border-black bg-white divide-y-4 divide-black overflow-hidden">
+                                    {faqs.map((item, i) => (
+                                        <AccordionItem key={i} q={item.q} a={item.a} defaultOpen={i === 0} />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* RIGHT*/}
-                    <div className="relative w-full flex items-center justify-center">
-                        {/* Logo */}
-                        <span
-                            className={"relative flex items-center justify-center h-[7.5rem] w-[7.5rem] rounded-xl border-4 border-black overflow-hidden bg-[#e90105] shadow-[4px_4px_0_0_#000]"}
-                        >
-                            <Image
-                                src="/logo.png"
-                                alt="Puzzled 2025"
-                                fill
-                                className="object-contain p-[4px]"
-                                priority
-                            />
-                        </span>
-                    </div>
-                </section>
 
-            </div>
+                </div>
+
+
+                {/* RIGHT*/}
+                <div className="relative w-full flex flex-col items-center justify-center">
+                    {/* Logo */}
+                    <span
+                        className={"relative flex items-center justify-center h-[10rem] w-full rounded-xl border-4 border-black overflow-hidden bg-[#e90105] shadow-[12px_12px_0_0_#000]"}
+                    >
+                        <Image
+                            src="/logo.png"
+                            alt="Puzzled 2025"
+                            fill
+                            className="object-contain p-[4px]"
+                            priority
+                        />
+                    </span>
+                    
+                </div>
+
+            </section>
+
         </>
     );
 }
