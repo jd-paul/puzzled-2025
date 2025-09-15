@@ -6,8 +6,8 @@ export default function PicturesCard() {
         <div
             className="
         grid gap-6
-        grid-cols-2 auto-rows-[220px]
-        md:auto-rows-[260px]
+        grid-cols-2 auto-rows-[minmax(220px,_auto)]
+        md:auto-rows-[minmax(260px,_auto)]
         lg:grid-cols-5
       "
         >

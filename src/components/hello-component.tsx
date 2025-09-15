@@ -64,7 +64,7 @@ export default function HelloComponent() {
 
                             {/* FAQs */}
                             <div className="w-full">
-                                <div className="rounded-md border-4 border-black bg-white divide-y-4 divide-black overflow-hidden">
+                                <div className="rounded-md border-4 border-black bg-white divide-y-4 divide-black overflow-hidden shadow-[8px_8px_0_0_#000]">
                                     {faqs.map((item, i) => (
                                         <AccordionItem key={i} q={item.q} a={item.a} defaultOpen={i === 0} />
                                     ))}

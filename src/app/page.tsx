@@ -50,7 +50,7 @@ export default function Home() {
             overflow-visible text-black bg-[#FEF5D0]
             z-50 border-b-[6px] border-black"
       >
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl px-5">
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl px-5 z-100">
           <QuickLinks />
         </div>
         <CssHatchBackground />
@@ -75,7 +75,7 @@ export default function Home() {
         z-20 py-6 px-8 bg-amber-600
       ">
         {/* Left text */}
-        <p className="font-bold text-[clamp(0.9rem,2.2vw,1rem)]">
+        <p className="text-black font-black text-lg">
           Puzzled {new Date().getFullYear()}
         </p>
 
@@ -86,8 +86,8 @@ export default function Home() {
           rel="noopener noreferrer"
           className="flex items-center gap-2"
         >
-          <Instagram className="w-5 h-5" />
-          <span className="font-bold text-[clamp(0.9rem,2.2vw,1rem)]">Instagram</span>
+          <Instagram className="w-5 h-5 stroke-3" />
+          <span className="font-bold text-lg">Instagram</span>
         </a>
       </section>
     </div>
