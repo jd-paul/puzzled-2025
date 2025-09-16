@@ -23,9 +23,6 @@ const faqs = [
 export default function HelloComponent() {
     return (
         <>
-
-
-
             {/* body */}
 
             <section className="relative grid gap-6 md:grid-cols-[60%_40%] items-start">
@@ -55,7 +52,7 @@ export default function HelloComponent() {
                             </h1>
 
                             <p className="text-[clamp(1rem,2.2vw,1.2rem)] text-stone-800 mb-8">
-                                Join us on <span className="font-bold">Wed 24 Sept, 1-6pm</span> at <span className="font-bold">Strand</span> for King's Informatics' annual puzzle hunt!
+                                Join us on <span className="font-bold">Wed 24 Sept, 2-6.15pm</span> at <span className="font-bold">Strand</span> for King's Informatics' annual puzzle hunt!
                             </p>
 
                             <h1 className="text-[clamp(1.4rem,6vw,1.6rem)] font-extrabold leading-[1.2] mb-4">
