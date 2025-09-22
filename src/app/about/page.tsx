@@ -25,7 +25,7 @@ const AboutPage: React.FC = () => {
                     {/* Show off a single image of public/images/meet-the-team/committee-compressed.JPG */}
                     <div className="mt-8">
                         <WindowImage
-                            src="/images/meet-the-team/committee-compressed.jpg"
+                            src="/images/meet-the-team/committee.jpg"
                             alt="Meet the Team"
                         />
                     </div>
