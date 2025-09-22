@@ -8,7 +8,7 @@ import { Album, ChevronDown, Minus, SquareX, LinkIcon, Ellipsis } from "lucide-r
 const faqs = [
     {
         q: "Who can take part in Puzzled 2025?",
-        a: "Unfortunately, due to limited capacity Puzzled 2025 is only open to undergraduate students (years 1-6) and postgraduate research (PhD) students in the Department of Informatics (King's College London).",
+        a: "Unfortunately, due to limited capacity Puzzled 2025 is only open to undergraduate students (years 1-4) and postgraduate research (PhD) students in the Department of Informatics (King's College London).",
     },
     {
         q: "I don't know anyone at King's yet, can I still take part?",
@@ -24,7 +24,6 @@ export default function HelloComponent() {
     return (
         <>
             {/* body */}
-
             <section className="relative grid gap-6 md:grid-cols-[60%_40%] items-start">
                 {/* LEFT */}
                 <div
@@ -78,7 +77,7 @@ export default function HelloComponent() {
                 <div className="relative w-full flex flex-col items-center justify-center">
                     {/* Logo */}
                     <span
-                        className={"relative flex items-center justify-center h-[10rem] w-full rounded-xl border-4 border-black overflow-hidden bg-[#e90105] shadow-[12px_12px_0_0_#000]"}
+                        className={"relative flex items-center justify-center h-[10rem] w-full rounded-xl border-6 border-black overflow-hidden bg-[#e90105] shadow-[12px_12px_0_0_#000]"}
                     >
                         <Image
                             src="/logo.png"
@@ -88,7 +87,20 @@ export default function HelloComponent() {
                             priority
                         />
                     </span>
-                    
+
+                    <span
+                        className={
+                            "relative flex items-start justify-center h-[15rem] w-full rounded-xl border-6 border-black overflow-hidden shadow-[12px_12px_0_0_#000] mt-6"
+                        }
+                    >
+                        <Image
+                            src="/images/team.jpeg"
+                            alt="Puzzled Team"
+                            fill
+                            className="object-cover object-top"
+                            priority={false}
+                        />
+                    </span>
                 </div>
 
             </section>

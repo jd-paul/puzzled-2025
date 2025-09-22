@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
                     {[
                         { href: "https://www.eventbrite.com/e/puzzled-2025-tickets-1652374810539", label: "Tickets", ext: true },
                         { href: "/#about", label: "About" },
-                        { href: "/#about", label: "FAQ" },
+                        { href: "/puzzled-2024", label: "Puzzled 2024" },
                         { href: "https://www.instagram.com/kclpuzzled", label: "Instagram", ext: true },
                     ].map((it) => (
                         <Link

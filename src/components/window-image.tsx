@@ -1,11 +1,10 @@
-// components/window-image.tsx
 import { Ellipsis, Minus, Album, SquareX } from "lucide-react";
 
 export function WindowImage({
     src,
     alt,
     title,
-}: { src: string; alt: string; title: string }) {
+}: { src: string; alt: string; title?: string }) {
     return (
         <figure className="flex h-full w-full flex-col rounded-xl border-[6px] border-black bg-white shadow-[12px_12px_0_0_#000] overflow-hidden">
             {/* title bar */}
@@ -22,9 +21,11 @@ export function WindowImage({
             <img src={src} alt={alt} className="h-full w-full object-cover" />
 
             {/* caption */}
-            <figcaption className="border-t-[6px] border-black bg-white px-5 py-3 text-lg font-extrabold">
-                {title}
-            </figcaption>
+            {title && (
+                <figcaption className="border-t-[6px] border-black bg-white px-5 py-3 text-lg font-extrabold">
+                    {title}
+                </figcaption>
+            )}
         </figure>
     );
 }
