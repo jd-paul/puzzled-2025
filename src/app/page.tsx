@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar"
 import CssPuzzleBackground from "@/components/css-puzzle-background"
 import CssHatchBackground from "@/components/css-hatch-background"
 import HelloComponent from "@/components/hello-component"
+import { WindowImage } from "@/components/window-image";
 
 import MainCard from "@/components/main-card"
 import QuickLinks from "@/components/quick-links"
@@ -56,6 +57,12 @@ export default function Home() {
             Previous Pictures
           </h1>
           <PicturesCard />
+
+          <h1 className="text-[clamp(1.8rem,6vw,2.75rem)] font-extrabold leading-[1.2] mb-4 mt-12">
+            Puzzled 2025 Rules
+          </h1>
+          <WindowImage src="/images/puzzled-2025-rules.jpg" alt="Puzzled 2025 Rules" />
+
         </div>
       </section>
 
