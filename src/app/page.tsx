@@ -61,7 +61,7 @@ export default function Home() {
           <h1 className="text-[clamp(1.8rem,6vw,2.75rem)] font-extrabold leading-[1.2] mb-4 mt-12">
             Puzzled 2025 Rules
           </h1>
-          <WindowImage src="/images/puzzled-2025-rules.jpg" alt="Puzzled 2025 Rules" />
+          <WindowImage src="/images/puzzled-2025-rules.png" alt="Puzzled 2025 Rules" />
 
         </div>
       </section>
